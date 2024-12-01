@@ -5,10 +5,14 @@ import React, { useState } from 'react'
 
 export default function App() {
 
-  const [replyId, setReplyId] = useState('');
+  const [replyId, setReplyId] = useState(null);
 
   function handleReply(id) {
-    setReplyId(id);
+    if (replyId === id) {
+      setReplyId(null);
+    } else {
+      setReplyId(id);
+    }
   }
 
   return (
